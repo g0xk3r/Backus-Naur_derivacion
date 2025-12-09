@@ -4,6 +4,8 @@
 #include <vector>
 #include <cstdlib>
 #include <ctime>
+#include <cstdio>
+#include <random>
 
 using namespace std;
 
@@ -130,11 +132,27 @@ public:
 int main() {
     srand(time(0));
     GramaticaBackusNaur gbn;
-    int n;
-    cout << "Numero de IFs deseados: ";
-    if (!(cin >> n)) {
+    int n, opc = 0;
+    printf("1. Correr automaticamente\n");
+    printf("2. Correr manualmente\n");
+    printf("Seleccione una opcion: ");
+    scanf("%d", &opc);
+    if (opc == 1) {
+        const int min_val = 2;
+        const int max_val = 100000;
+        std::random_device rd;
+        std::mt19937 generador(rd());
+        std::uniform_int_distribution<int> distribucion(min_val, max_val);
+        printf("Corriendo automaticamente...\n");
+        n = distribucion(generador);
+        cout << "Numero de IFs deseados: " << n << endl;
+    } else {
+        printf("Corriendo manualmente...\n");
+        cout << "Numero de IFs deseados: ";
+        if (!(cin >> n)) {
         cout << "No se ingreso un numero valido, se usara 5 por defecto." << endl;
         n = 5;
+        }
     }
     cout << "Generando " << n << " IFs..." << endl;
     gbn.derivar(n);
