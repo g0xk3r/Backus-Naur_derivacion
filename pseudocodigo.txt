@@ -1,0 +1,33 @@
+if (condicion):
+  if (condicion):
+    if (condicion):
+      if (condicion):
+        if (condicion):
+          if (condicion):
+            if (condicion):
+              if (condicion):
+                pass
+            else:
+              pass
+        else:
+          if (condicion):
+            pass
+    else:
+      if (condicion):
+        if (condicion):
+          pass
+  else:
+    if (condicion):
+      if (condicion):
+        if (condicion):
+          if (condicion):
+            if (condicion):
+              if (condicion):
+                pass
+              else:
+                if (condicion):
+                  if (condicion):
+                    pass
+          else:
+            if (condicion):
+              pass
